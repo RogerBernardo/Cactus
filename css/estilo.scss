@@ -1,0 +1,284 @@
+/*Fontes*/
+@font-face{
+    font-family: 'Roboto';
+    src: ("src/fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face{
+    font-family: 'Roboto';
+    src: ("src/fonts/Roboto/Roboto-Bold.ttf");
+    font-weight: 600;
+}
+
+@font-face{
+    font-family: 'Opens Sans';
+    src: ("src/fonts/Open_Sans/OpenSans-Regular.ttf");
+}
+
+@font-face{
+    font-family: 'Opens Sans';
+    src: ("src/fonts/Open_Sans/OpenSans-Bold.ttf");
+    font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6{    
+    font-family: 'Roboto', sans-serif !important;
+}
+
+p, a, input, label, select, textarea, form, option{
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+label{
+    font-weight: bold;
+}
+
+/*Cores do sistema*/
+$verde-escuro: #358C54;
+$verde-claro: #87BF7E;
+$verde: #52D981;
+$rosa-escuro: #F26D78;
+$rosa-claro: #F294C0;
+$rosa: #F294C0;
+$amarelo: #FFE52E;
+$azul: #6BDBFF;
+$preto: #0D0D0D;
+$padrao: #FFFFFF;
+$cinza: #808080;
+$cinza-escuro: #353839;
+
+.amarelo{
+    background-color: $amarelo !important;
+}
+.verde{
+    background-color: $verde !important;
+}
+.rosa{
+    background-color: $rosa !important;
+}
+.azul{
+    background-color: $azul !important;
+}
+.padrao{
+    background-color: $padrao !important;
+}
+
+
+@mixin sombra-inferior{
+    -webkit-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 10px 15px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 10px 15px 0px rgba(50, 50, 50, 0.75);
+}
+
+/*Css Reset*/
+* {
+    padding:0;
+    margin:0;
+    vertical-align:baseline;
+    list-style:none;
+    border:0;
+}
+
+/*Main*/
+main{    
+    width: 100%;
+
+    section{
+        padding: 3%;     
+        
+        .title{
+            display: block;
+            margin-bottom: 15px;            
+            color: $cinza-escuro;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.bg-main{
+    background-color: $verde-claro !important;
+}
+
+/*Navbar*/
+.bg-navbar{
+    background-color: $verde-escuro !important;
+}
+
+.nav-item .nav-link{
+    color: white !important;
+    margin-right: 20px;
+}
+
+header{
+    button{
+        background-color: transparent;
+        outline: none;
+    }
+    
+    button:focus{
+        outline: 0;
+    }
+}
+
+/*Login e cadastro*/
+.store{
+    width: 100%;
+    height: 100vh;
+    background: $verde-escuro;   
+}
+
+.box{
+    h1{
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .btn{
+        width: 100%;
+        background: $rosa-claro;
+        color: $preto;
+        margin-bottom: 15px;
+    }
+    
+    p{
+        text-align: center;
+    }   
+
+    background: whitesmoke;
+    height: auto;
+    padding: 50px;
+    width: 30%;
+    @include sombra-inferior();   
+
+    @media screen and (max-width: 1000px){
+        width: 55%;
+    }
+
+    @media screen and (max-width: 800px){
+        width: 60%;
+    }
+
+    @media screen and (max-width: 700px){
+        width: 65%;
+        padding: 50px;
+    }
+
+    @media screen and (max-width: 500px){
+        width: 70%;
+        padding: 20px;       
+    }  
+}
+
+.form-input{
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 30px;
+    border: 0;
+    border-bottom: 1px solid #c1c1c1;
+    background-color: whitesmoke;     
+    line-height: 1.6em;   
+}
+
+.form-input:hover, .form-input:focus{
+    outline: 0;
+    border-bottom: 1px solid $rosa-claro;
+}
+
+.form-input::before{
+    background-color: whitesmoke;     
+}
+
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; 
+}
+
+@mixin design_controls{
+    input[type="text"]{
+        outline: none;
+        border-bottom: 1px solid $cinza;
+        width: 100%;
+        margin-bottom: 0.5em;
+        padding-bottom: 5px;
+        font-weight: 800;     
+        background-color: transparent;   
+    }  
+
+    textarea{
+        resize: vertical;
+        padding: 5px;
+        outline: none; 
+        width: 100%;
+        font-weight: 300;
+        color: black; 
+        background-color: transparent;       
+    }      
+
+    button{
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    select{
+        margin-left: 3%;
+        width: 87% !important;
+    }
+}
+
+/*Design dos cards*/
+.form-notas{
+    background-color: white;
+    width: 25em;
+    margin: 0 auto;
+    padding: 2em;
+    border-radius: 0.8em;
+    @include sombra-inferior();
+    @include design_controls();    
+}
+
+.card{
+    padding: 1em;
+    border-radius: 1em !important;
+    width: 25em;
+    margin: 25px 25px 25px 0;
+    @include sombra-inferior();
+    @include design_controls();
+}
+
+.card-body{
+    padding: 0;
+}
+
+#notas-importantes, #notas-restantes{
+    @media screen and (max-width: 600px){
+       .card-group{
+           margin: 0 auto;
+       }       
+    }  
+}
+
+/*Footer*/
+footer{
+    padding-top: 4em;
+    padding-bottom: 4em;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    a{
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    img{
+        width: 25px;
+        height: auto;
+    }
+}

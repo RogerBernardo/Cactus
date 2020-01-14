@@ -1,9 +1,12 @@
 <?php
 include_once('controle.php');
-segurança();
-executar_funcoes();
+$sessao = new Sessao();
+$sessao->seguranca();
+gerente();
 ?>
-
+<!-- <li class="nav-item">
+                        <a class="nav-link" href="#"><?php echo ("Bem vindo " . $_SESSION['nome'] . "!") ?></a>
+                    </li> -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -79,7 +82,8 @@ executar_funcoes();
             <div class="card-group">
                 <?php
                 include_once('controle.php');
-                buscar_notas_importantes();
+                $notasImportantes = new Notas();
+                $notasImportantes->busca($_SESSION['email'], 1);
                 ?>
             </div>
         </section>
@@ -90,7 +94,8 @@ executar_funcoes();
             <div class="card-group">
                 <?php
                 include_once('controle.php');
-                buscar_notas_outras();
+                $notas = new Notas();
+                $notas->busca($_SESSION['email'], 0);
                 ?>
             </div>
         </section>
@@ -100,6 +105,7 @@ executar_funcoes();
         <a href="https://www.linkedin.com/in/rbmelolima/"><img src="src/img/linkedin.png" alt="Linkedin" /></a>
         <a href="mailto:rogerbernardo007@gmail.com"><img src="src/img/gmail.png" alt="Gmail" /></a>
         <a href="https://github.com/RogerBernardo"><img src="src/img/github.png" alt="Github" /></a>
+        <p><?php echo('Cactus©' . date("Y")) ?><p>
     </footer>
 
     <script src="js/comportamento.js"></script>

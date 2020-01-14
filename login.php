@@ -28,12 +28,15 @@
                         <input type="password" class="form-input" id="senha_user" name="senha_user" placeholder="Senha" require>
                     </div>
                     <input type="submit" class="btn" value="Entrar" name="login" />
-                    <p><a href="">Esqueceu sua Senha?</a></p>
+                    <p><a href="">Esqueceu sua Senha?</a> / <a href="index.php">Cadastre-se</a></p>
                 </form>
                 <?php
                 include("controle.php");
-                if (isset($_POST['login']))
-                    login();
+                if (isset($_POST['login'])) {
+                    $sessao = new Sessao();
+                    $sessao->login($_POST['email_user'], $_POST['senha_user']);
+                }
+
                 ?>
             </div>
         </div>
@@ -43,6 +46,7 @@
         <a href="https://www.linkedin.com/in/rbmelolima/"><img src="src/img/linkedin.png" alt="Linkedin" /></a>
         <a href="mailto:rogerbernardo007@gmail.com"><img src="src/img/gmail.png" alt="Gmail" /></a>
         <a href="https://github.com/RogerBernardo"><img src="src/img/github.png" alt="Github" /></a>
+        <p><?php echo('Cactus©' . date("Y")) ?><p>
     </footer>
 
     <script src="src/jquery/jquery-3.4.1.min.js"></script>

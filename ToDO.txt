@@ -1,7 +1,4 @@
 Tarefas:
-
-- Preparar todas as entradas MySql do sistema
 - Criar página de configurações da conta do usuário
 - Criar página do "esqueci minha senha"
-- Criptografar senhas com SHA1
-- Personalizar o checkbox do formulário das notas
+

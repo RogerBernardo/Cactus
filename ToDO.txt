@@ -1,4 +1,0 @@
-Tarefas:
-- Criar página de configurações da conta do usuário
-- Criar página do "esqueci minha senha"
-

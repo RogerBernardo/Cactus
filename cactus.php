@@ -37,6 +37,9 @@ gerente();
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
+                        <a class="nav-link" href="#"><?php echo("Bem vindo, ".$_SESSION['nome']. "!") ?></a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Configurações</a>
                     </li>
                     <li class="nav-item">
@@ -105,7 +108,7 @@ gerente();
         <a href="https://www.linkedin.com/in/rbmelolima/"><img src="src/img/linkedin.png" alt="Linkedin" /></a>
         <a href="mailto:rogerbernardo007@gmail.com"><img src="src/img/gmail.png" alt="Gmail" /></a>
         <a href="https://github.com/RogerBernardo"><img src="src/img/github.png" alt="Github" /></a>
-        <p><?php echo('Cactus©' . date("Y")) ?><p>
+        <p><?php echo ('Cactus©' . date("Y")) ?><p>
     </footer>
 
     <script src="js/comportamento.js"></script>

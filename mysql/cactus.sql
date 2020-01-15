@@ -5,6 +5,7 @@ CREATE TABLE `cactus`.`usuario` (
   `nome` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
   `senha` VARCHAR(100) NOT NULL,
+  `token` varchar(100) NOT NULL,
   PRIMARY KEY (`email`));
   
 CREATE TABLE `cactus`.`notas` (
@@ -16,11 +17,9 @@ CREATE TABLE `cactus`.`notas` (
   `email` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`idnotas`));
 
-SELECT * FROM usuario WHERE email = "rogerbernardo007@gmail.com";
-SELECT * FROM notas where email = 'rogerbernardo007@gmail.com' and urgencia = '1';
 SELECT * FROM usuario;
+SELECT * FROM notas;
 DELETE FROM notas;
 DELETE FROM usuario;
 DROP DATABASE cactus;
 
-INSERT INTO usuario (nome, email, senha) VALUES ('Roger Bernardo', 'rogerbernardo007@gmail.com', '00000');

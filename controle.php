@@ -44,6 +44,11 @@ class Criptografar
     {
         return sha1($senha);
     }
+
+    public function token($email, $nome)
+    {
+        return sha1(md5($email . $nome));
+    }
 }
 
 class Sessao extends Criptografar
@@ -73,6 +78,30 @@ class Sessao extends Criptografar
         $stmt->close();
     }
 
+    public function loginToken($email, $token)
+    {
+        $mysqli = mysqli();
+        $sql = "SELECT * from usuario WHERE email = ? AND token = ?";
+        $stmt = $mysqli->prepare($sql);
+        $stmt->bind_param('ss', $email, $token);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+
+        if ($resultado->num_rows > 0) {
+            while ($row = $resultado->fetch_assoc()) {
+                $_SESSION['nome'] = $row['nome'];
+            }
+            $_SESSION['email'] = $email;
+            $_SESSION['senha'] = $token;
+            header("Location: cactus.php");
+        } else {
+            session_destroy();
+            echo "<div class=\"alert alert-warning\" role=\"alert\">Não foi possível realizar o login com o seu Token!</div>";
+        }
+        $mysqli->close();
+        $stmt->close();
+    }
+
     public function logout()
     {
         if (!isset($_SESSION))
@@ -97,7 +126,7 @@ class Sessao extends Criptografar
 
 class Usuario extends Criptografar
 {
-    private $nome, $email, $senha, $permissao;
+    private $nome, $email, $senha, $token, $permissao;
 
     public function __construct($nome, $email, $senha1, $senha2)
     {
@@ -105,6 +134,7 @@ class Usuario extends Criptografar
             $this->nome = $nome;
             $this->email = filter_var($email, FILTER_VALIDATE_EMAIL);
             $this->senha = $this->criptografia($senha1);
+            $this->token = $this->token($email, $nome);
             $this->permissao = true;
         } else {
             echo "<div class=\"alert alert-warning\" role=\"alert\"> As senhas devem ser iguais e nenhum campo deve estar em branco! </div>";
@@ -126,9 +156,9 @@ class Usuario extends Criptografar
                 echo "<div class=\"alert alert-warning\" role=\"alert\"> Email já cadastrado! </div>";
             } else if ($result->num_rows == 0) {
                 $newmysqli = mysqli();
-                $sql = "INSERT INTO usuario (nome, email, senha) VALUES (?,?,?)";
+                $sql = "INSERT INTO usuario (nome, email, senha, token) VALUES (?,?,?,?)";
                 $stmt = $newmysqli->prepare($sql);
-                $stmt->bind_param('sss', $this->nome, $this->email, $this->senha);
+                $stmt->bind_param('ssss', $this->nome, $this->email, $this->senha, $this->token);
                 $stmt->execute();
 
 
@@ -142,7 +172,12 @@ class Usuario extends Criptografar
                 echo "<div class=\"alert alert-danger\" role=\"alert\"> Erro Inesperado! </div>";
             }
         }
-    }
+    }   
+
+    /* Próximas funções:
+    -> Alterar senha
+    -> Ler o token
+    -> Baixar token */
 }
 
 class Notas

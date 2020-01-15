@@ -3,15 +3,17 @@ Iniciei este projeto visando aprender mais sobre Prepared Statements e Programa�
 As principais funcionalidades do Cactus são: 
 - Cadastro de usuário.
 - Login.
+- Recuperação de senha.
 - Inserção, atualização, consulta e remoção de notas.
 - Modificação do nível de importância das notas.
 - Modificação nas cores das notas.
 
 Futuras funcionalidades do projeto:
-- Página de "Esqueci minha senha".
 - Página de configurações do usuário.
 
 
+## Icones
+Ícones retirados do site Flaticon (https://www.flaticon.com/free-icon/cactus_874928?term=cactus&page=1&position=6)
 
 
 ## Links utilizados

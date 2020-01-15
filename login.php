@@ -28,7 +28,7 @@
                         <input type="password" class="form-input" id="senha_user" name="senha_user" placeholder="Senha" require>
                     </div>
                     <input type="submit" class="btn" value="Entrar" name="login" />
-                    <p><a href="">Esqueceu sua Senha?</a> / <a href="index.php">Cadastre-se</a></p>
+                    <p><a href="esqueciSenha.php">Esqueceu sua Senha?</a> / <a href="index.php">Cadastre-se</a></p>
                 </form>
                 <?php
                 include("controle.php");
@@ -36,7 +36,6 @@
                     $sessao = new Sessao();
                     $sessao->login($_POST['email_user'], $_POST['senha_user']);
                 }
-
                 ?>
             </div>
         </div>

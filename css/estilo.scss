@@ -139,6 +139,7 @@ header{
     h1{
         text-align: center;
         margin-bottom: 25px;
+        font-size: 2em;
     }
 
     .btn{
@@ -258,7 +259,7 @@ header{
 #notas-importantes, #notas-restantes{
     @media screen and (max-width: 600px){
        .card-group{
-           margin: 0 auto;
+           margin: 0 auto;           
        }       
     }  
 }

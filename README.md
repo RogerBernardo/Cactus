@@ -13,7 +13,13 @@ Futuras funcionalidades do projeto:
 
 
 ## Icones
-Ícones retirados do site Flaticon (https://www.flaticon.com/free-icon/cactus_874928?term=cactus&page=1&position=6)
+Ícones retirados do site Flaticon 
+https://www.flaticon.com/free-icon/cactus_874928?term=cactus&page=1&position=6
+https://www.flaticon.com/free-icon/light-bulb_2427450?term=bulb&page=1&position=26
+https://www.flaticon.com/free-icon/education_1772914
+
+## Imagens
+Cacto na página inicial: Photo by Polina Raevskaya on Unsplash
 
 
 ## Links utilizados

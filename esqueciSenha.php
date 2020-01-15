@@ -15,6 +15,29 @@
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-navbar">
+            <a class="navbar-brand" href="index.php">
+                <img src="src/img/logo/cactus-32.png" class="d-inline-block align-top" alt="Imagem de um cacto">
+                Cactus
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro.php">Cadastre-se</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
     <main>
         <div class="store d-flex align-content-center flex-wrap justify-content-center">
             <div class="box">
@@ -29,7 +52,7 @@
                         <input type="text" class="form-input" id="token_user" name="token_user" placeholder="Token" require>
                     </div>
                     <input type="submit" class="btn" value="Entrar" name="login" />
-                    <p><a href="login.php">Faça o Login</a> / <a href="index.php">Cadastre-se</a></p>
+                    <p><a href="login.php">Faça o Login</a> / <a href="cadastro.php">Cadastre-se</a></p>
                 </form>
                 <?php
                 include("controle.php");

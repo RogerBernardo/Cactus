@@ -27,9 +27,9 @@ gerente();
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-navbar">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <img src="src/img/logo/cactus-32.png" class="d-inline-block align-top" alt="Imagem de um cacto">
-                Cactus - Seu bloco de notas
+                Cactus
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
                 <span class="navbar-toggler-icon"></span>

@@ -1,24 +1,19 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Roger Bernardo de Melo Lima">
-
     <!--FOLHA DE ESTILO-->
     <link rel="stylesheet" href="css/estilo.css" />
-
     <!--Bootstrap 4 -->
     <link rel="stylesheet" href="src/bootstrap/css/bootstrap.min.css" />
-
     <title>Cactus - Seu bloco de notas</title>
 
 </head>
 
 <body>
-
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-navbar">
             <a class="navbar-brand" href="index.php">
@@ -43,50 +38,37 @@
     </header>
 
     <main>
+        <div class="store d-flex align-content-center flex-wrap justify-content-center">
+            <div class="box">
+                <p><img alt="Logo do Cactus" src="src/img/logo/cactus-128.png" class="img-fluid" /></p>
+                <h1>Cadastre-se</h1>
+                <form class="" action="" method="POST" autocomplete="off">
+                    <div class="form-group">
+                        <input type="text" class="form-input" id="nome_user" name="nome_user" placeholder="Nome Completo" require>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" id="email_user" name="email_user" placeholder="Email" require>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-input" id="senha_user" name="senha_user" placeholder="Senha" require>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-input" id="senha_confirm_user" name="senha_confirm_user" placeholder="Confirme sua senha" require>
+                    </div>
+                    <button type="submit" class="btn" name="cadastrar">Cadastrar</button>
 
-        <section id="section-1">
-            <div class="row">
-                <div class="col-md-6" id="bloco-banner">
-                    <h1>Cactus - Seu bloco de notas</h1>
-                    <p>Registre suas ideias onde quer que esteja, afinal, elas sempre estarão guardadas conosco!</p>
+                    <p><a href="login.php">Já tem uma conta? Faça o login!</a></p>
+                </form>
 
-                    <a href="cadastro.php" class="btn calltoaction">Cadastre-se</a>
-                </div>
-                <div class="col-md-6 d-flex justify-content-center">
-                    <img src="src/img/logo/cactus-512.png" class="img-fluid" alt="Imagem de um cacto">
-                </div>
+                <?php
+                include_once("controle.php");
+                if (isset($_POST['cadastrar'])) {
+                    $usuario = new Usuario($_POST['nome_user'], $_POST['email_user'], $_POST['senha_user'], $_POST['senha_confirm_user']);
+                    $usuario->cadastrar($_POST['email_user']);
+                }
+                ?>
             </div>
-        </section>       
-
-        <section id="section-2">
-            <div class="text-center">
-                <h2>Como funciona?</h2>
-            </div>
-
-            <div class="row text-center">
-                <div class="col-md-4 caixa">
-                    <img class="img-fluid" alt="Imagem de um cadastro" src="src/img/register.png" />
-                    <h4>Cadastre-se</h4>
-                    <p>Crie sua conta gratuitamente. </p>
-                </div>
-                <div class="col-md-4 caixa">
-                    <img class="img-fluid" alt="Imagem de login" src="src/img/user.png" />
-                    <h4>Faça seu login</h4>
-                    <p>Entre com sua senha ou token de segurança.</p>
-                </div>
-                <div class="col-md-4 caixa">
-                    <img class="img-fluid" alt="Imagem de uma nota" src="src/img/note.png" />
-                    <h4>Adicione conteúdo</h4>
-                    <p>Digite notas, mude de cor e adicione grau de importância.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="section-3">
-            <h2>Registre o que você está pensando</h2>
-            <a class="btn calltoaction" href="cadastro.php">Cadastre-se</a>
-        </section>
-
+        </div>
     </main>
 
     <footer>

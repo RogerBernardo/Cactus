@@ -10,6 +10,7 @@ As principais funcionalidades do Cactus são:
 
 Futuras funcionalidades do projeto:
 - Página de configurações do usuário.
+- Mudar dinamicamente o conteúdo sem atualizar a página
 
 
 ## Icones
@@ -28,3 +29,7 @@ Cacto na página inicial: Photo by Polina Raevskaya on Unsplash
 - https://www.w3schools.com/php/php_mysql_select.asp
 - https://www.w3schools.com/php/php_mysql_prepared_statements.asp
 - http://www.phpit.com.br/artigos/filtrando-e-validando-dados-no-php-com-filter_var.phpit
+- https://www.gigasystems.com.br/artigo/72/criando-um-arquivo-texto-txt-com-php
+- https://www.codigofonte.com.br/codigos/criar-escrever-e-fechar-um-arquivo-de-texto-txt
+- https://www.vivaolinux.com.br/dica/Excluir-arquivo-de-uma-pasta-do-servidor-atraves-do-PHP
+- http://blog.thiagobelem.net/forcando-o-download-de-arquivos-com-php

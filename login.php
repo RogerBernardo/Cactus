@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -31,13 +30,13 @@
                         <a class="nav-link" href="cadastro.php">Cadastre-se</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php">Login</a>
+                        <a class="nav-link" href="login.php">Entrar</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
-    
+
     <main>
         <div class="store d-flex align-content-center flex-wrap justify-content-center">
             <div class="box">
@@ -50,15 +49,12 @@
                     <div class="form-group">
                         <input type="password" class="form-input" id="senha_user" name="senha_user" placeholder="Senha" require>
                     </div>
-                    <input type="submit" class="btn" value="Entrar" name="login" />
+                    <button class="btn" name="login">Entrar </button>
                     <p><a href="esqueciSenha.php">Esqueceu sua Senha?</a> / <a href="cadastro.php">Cadastre-se</a></p>
                 </form>
                 <?php
-                include("controle.php");
-                if (isset($_POST['login'])) {
-                    $sessao = new Sessao();
-                    $sessao->login($_POST['email_user'], $_POST['senha_user']);
-                }
+                include_once('classes.php');
+                gerente();
                 ?>
             </div>
         </div>

@@ -35,7 +35,7 @@
                         <a class="nav-link" href="cadastro.php">Cadastre-se</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php">Login</a>
+                        <a class="nav-link" href="login.php">Entrar</a>
                     </li>
                 </ul>
             </div>
@@ -83,8 +83,8 @@
         </section>
 
         <section id="section-3">
-            <h2>Registre o que você está pensando</h2>
-            <a class="btn calltoaction" href="cadastro.php">Cadastre-se</a>
+            <h2>Está pronto para registrar o que você está pensando?</h2>
+            <a class="btn calltoaction" href="cadastro.php">Sim, estou pronto! </a>
         </section>
 
     </main>

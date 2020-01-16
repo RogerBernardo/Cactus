@@ -1,12 +1,10 @@
 <?php
-include_once('controle.php');
+include_once('classes.php');
 $sessao = new Sessao();
 $sessao->seguranca();
 gerente();
 ?>
-<!-- <li class="nav-item">
-                        <a class="nav-link" href="#"><?php echo ("Bem vindo " . $_SESSION['nome'] . "!") ?></a>
-                    </li> -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -37,13 +35,16 @@ gerente();
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><?php echo("Bem vindo, ".$_SESSION['nome']. "!") ?></a>
+                        <a class="nav-link" href="#"><?php echo ("Bem vindo, " . $_SESSION['nome'] . "!") ?></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Configurações</a>
                     </li>
                     <li class="nav-item">
                         <form method="POST"><button class="nav-link" name="logout">Sair</button></form>
+                    </li>
+                    <li class="nav-item">
+                        <form method="POST"><button class="nav-link" name="downloadToken">Baixar Token</button></form>
                     </li>
                 </ul>
             </div>
@@ -76,7 +77,7 @@ gerente();
                     </select>
                 </div>
                 <button type="reset" class="btn">Limpar</button>
-                <button type="submit" class="btn btn-info" name="criar_notas">Ok</button>
+                <button class="btn btn-info" name="criar_notas">Ok</button>
             </form>
         </section>
 
@@ -84,7 +85,6 @@ gerente();
             <h6 class="title">Importante</h6>
             <div class="card-group">
                 <?php
-                include_once('controle.php');
                 $notasImportantes = new Notas();
                 $notasImportantes->busca($_SESSION['email'], 1);
                 ?>
@@ -96,7 +96,6 @@ gerente();
             <h6 class="title">Outras</h6>
             <div class="card-group">
                 <?php
-                include_once('controle.php');
                 $notas = new Notas();
                 $notas->busca($_SESSION['email'], 0);
                 ?>

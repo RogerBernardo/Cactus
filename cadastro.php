@@ -30,7 +30,7 @@
                         <a class="nav-link" href="cadastro.php">Cadastre-se</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php">Login</a>
+                        <a class="nav-link" href="login.php">Entrar</a>
                     </li>
                 </ul>
             </div>
@@ -55,17 +55,14 @@
                     <div class="form-group">
                         <input type="password" class="form-input" id="senha_confirm_user" name="senha_confirm_user" placeholder="Confirme sua senha" require>
                     </div>
-                    <button type="submit" class="btn" name="cadastrar">Cadastrar</button>
+                    <button class="btn" name="cadastrar">Cadastrar </button>
 
                     <p><a href="login.php">Já tem uma conta? Faça o login!</a></p>
                 </form>
 
                 <?php
-                include_once("controle.php");
-                if (isset($_POST['cadastrar'])) {
-                    $usuario = new Usuario($_POST['nome_user'], $_POST['email_user'], $_POST['senha_user'], $_POST['senha_confirm_user']);
-                    $usuario->cadastrar($_POST['email_user']);
-                }
+                include_once('classes.php');
+                gerente();
                 ?>
             </div>
         </div>

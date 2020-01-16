@@ -264,12 +264,18 @@ header{
     }  
 }
 
+.controles{
+    display: none;
+}
+
 /*Página inicial*/
 .calltoaction{
     background: white;
     color: $verde-escuro;
     font-weight: bold !important;
-    width: 250px;
+    width: 300px;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
 }
 
 .caixa{    
@@ -292,6 +298,10 @@ header{
     img{
         margin: 0 auto;;
     }
+
+    h1{
+        font-size: 4em;
+    }
 }
 
 #section-2{
@@ -310,10 +320,18 @@ header{
     color: whitesmoke;
 
     h2{
-        letter-spacing: 4px;
+        letter-spacing: 2px;
         text-transform: uppercase;
-        margin-bottom: 15px;
+        margin-bottom: 30px;
+        text-shadow: 0px 0px 20px #000000;
     }
+
+    @media screen and (max-width: 600px){
+        h2{
+            letter-spacing: 1px;   
+            font-size: 1.6em;        
+        }      
+     }  
 }
 
 

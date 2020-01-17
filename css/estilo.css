@@ -1,5 +1,6 @@
-@charset "UTF-8";
-/*Fontes*/
+/*---------------------*/
+/*        Fontes       */
+/*---------------------*/
 @font-face {
   font-family: 'Roboto';
   src: "src/fonts/Roboto/Roboto-Regular.ttf"; }
@@ -23,7 +24,9 @@ p, a, input, label, select, textarea, form, option {
 label {
   font-weight: bold; }
 
-/*Cores do sistema*/
+/*---------------------*/
+/*   Cores do sistema  */
+/*---------------------*/
 .amarelo {
   background-color: #FFE52E !important; }
 
@@ -39,7 +42,9 @@ label {
 .padrao {
   background-color: #FFFFFF !important; }
 
-/*Css Reset*/
+/*---------------------*/
+/*      CSS Reset      */
+/*---------------------*/
 * {
   padding: 0;
   margin: 0;
@@ -58,10 +63,12 @@ main {
       color: #353839;
       text-transform: uppercase; }
 
-.bg-main {
+.fundo-padrao {
   background-color: #87BF7E !important; }
 
-/*Navbar*/
+/*---------------------*/
+/*       Navbar        */
+/*---------------------*/
 .bg-navbar {
   background-color: #358C54 !important; }
 
@@ -75,7 +82,9 @@ header button {
 header button:focus {
   outline: 0; }
 
-/*Login e cadastro*/
+/*---------------------*/
+/*  Login e Cadastro   */
+/*---------------------*/
 .store {
   width: 100%;
   min-height: 115vh;
@@ -140,7 +149,9 @@ header button:focus {
   margin-right: auto;
   text-align: center; }
 
-/*Design dos cards*/
+/*---------------------*/
+/*   Design das notas  */
+/*---------------------*/
 .form-notas {
   background-color: white;
   width: 25em;
@@ -216,7 +227,9 @@ header button:focus {
 .controles {
   display: none; }
 
-/*Página inicial*/
+/*---------------------*/
+/*       INDEX         */
+/*---------------------*/
 .calltoaction {
   background: white;
   color: #358C54;
@@ -264,7 +277,9 @@ header button:focus {
       letter-spacing: 1px;
       font-size: 1.6em; } }
 
-/*Footer*/
+/*---------------------*/
+/*       FOOTER        */
+/*---------------------*/
 footer {
   padding-top: 4em;
   padding-bottom: 4em;
@@ -283,5 +298,27 @@ footer {
   footer p {
     font-style: italic;
     margin-top: 2em; }
+
+/*---------------------*/
+/*       Config        */
+/*---------------------*/
+.configuracoes {
+  width: 45%;
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: white !important; }
+  @media screen and (max-width: 1000px) {
+    .configuracoes {
+      width: 50%; } }
+  @media screen and (max-width: 800px) {
+    .configuracoes {
+      width: 60%; } }
+  @media screen and (max-width: 700px) {
+    .configuracoes {
+      width: 70%; } }
+  @media screen and (max-width: 500px) {
+    .configuracoes {
+      width: 80%; } }
 
 /*# sourceMappingURL=estilo.css.map */

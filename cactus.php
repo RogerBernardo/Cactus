@@ -1,5 +1,6 @@
 <?php
 include_once('classes.php');
+include_once('gerencia.php');
 $sessao = new Sessao();
 $sessao->seguranca();
 gerente();
@@ -23,35 +24,13 @@ gerente();
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-navbar">
-            <a class="navbar-brand" href="index.php">
-                <img src="src/img/logo/cactus-32.png" class="d-inline-block align-top" alt="Imagem de um cacto">
-                Cactus
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><?php echo ("Bem vindo, " . $_SESSION['nome'] . "!") ?></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Configurações</a>
-                    </li>
-                    <li class="nav-item">
-                        <form method="POST"><button class="nav-link" name="logout">Sair</button></form>
-                    </li>
-                    <li class="nav-item">
-                        <form method="POST"><button class="nav-link" name="downloadToken">Baixar Token</button></form>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <?php
+    $navegacao = new Navegacao();
+    $navegacao->navbarNotas($_SESSION['nome']);
+    ?>
 
-    <main class="bg-main">
+
+    <main class="fundo-padrao">
         <section id="criar-notas">
             <form method="POST" action="" class="form-notas" id="form-notas" autocomplete="off">
                 <div><input type="text" name="titulo_notas" placeholder="Título" id="titulo_notas" class="" /></div>
@@ -103,12 +82,10 @@ gerente();
         </section>
     </main>
 
-    <footer>
-        <a href="https://www.linkedin.com/in/rbmelolima/"><img src="src/img/linkedin.png" alt="Linkedin" /></a>
-        <a href="mailto:rogerbernardo007@gmail.com"><img src="src/img/gmail.png" alt="Gmail" /></a>
-        <a href="https://github.com/RogerBernardo"><img src="src/img/github.png" alt="Github" /></a>
-        <p><?php echo ('Cactus©' . date("Y")) ?><p>
-    </footer>
+    <?php
+    $navegacao = new Navegacao();
+    $navegacao->footer();
+    ?>
 
     <script src="js/comportamento.js"></script>
     <script src="src/jquery/jquery-3.4.1.min.js"></script>

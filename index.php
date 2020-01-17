@@ -1,3 +1,4 @@
+<?php include_once('classes.php'); include_once('gerencia.php');?>
 <!DOCTYPE html>
 
 <html lang="pt-br">
@@ -19,31 +20,12 @@
 
 <body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-navbar">
-            <a class="navbar-brand" href="index.php">
-                <img src="src/img/logo/cactus-32.png" class="d-inline-block align-top" alt="Imagem de um cacto">
-                Cactus
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="cadastro.php">Cadastre-se</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.php">Entrar</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <?php
+    $navegacao = new Navegacao();
+    $navegacao->navbarIndex();
+    ?>
 
     <main>
-
         <section id="section-1">
             <div class="row">
                 <div class="col-md-6" id="bloco-banner">
@@ -56,7 +38,7 @@
                     <img src="src/img/logo/cactus-512.png" class="img-fluid" alt="Imagem de um cacto">
                 </div>
             </div>
-        </section>       
+        </section>
 
         <section id="section-2">
             <div class="text-center">
@@ -89,12 +71,10 @@
 
     </main>
 
-    <footer>
-        <a href="https://www.linkedin.com/in/rbmelolima/"><img src="src/img/linkedin.png" alt="Linkedin" /></a>
-        <a href="mailto:rogerbernardo007@gmail.com"><img src="src/img/gmail.png" alt="Gmail" /></a>
-        <a href="https://github.com/RogerBernardo"><img src="src/img/github.png" alt="Github" /></a>
-        <p><?php echo ('Cactus©' . date("Y")) ?><p>
-    </footer>
+    <?php
+    $navegacao = new Navegacao();
+    $navegacao->footer();
+    ?>
 
     <script src="src/jquery/jquery-3.4.1.min.js"></script>
     <script src="src/popper/popper.min.js"></script>

@@ -29,9 +29,9 @@ function mudarCorForm() {
     }
 }
 
-function formFocus(id) {
+function formClick(id) {
     var div = document.getElementById(id);
     var display = div.style.display;
-    
+
     div.style.display = display == 'block' ? 'none' : 'block';
 }

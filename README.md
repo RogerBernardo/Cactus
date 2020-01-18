@@ -10,12 +10,11 @@ As principais funcionalidades do Cactus são:
 - Modificação nas cores das notas.
 
 Futuras funcionalidades do projeto:
-- Página de configurações do usuário.
 - Mudar dinamicamente o conteúdo sem atualizar a página
 
 
 ## Icones
-Ícones retirados do site Flaticon 
+Yodos os ícones foram retirados do site Flaticon 
 - https://www.flaticon.com/free-icon/cactus_874928?term=cactus&page=1&position=6
 - https://www.flaticon.com/free-icon/light-bulb_2427450?term=bulb&page=1&position=26
 - https://www.flaticon.com/free-icon/education_1772914

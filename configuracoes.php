@@ -39,7 +39,7 @@ gerente();
 
                 <section>
                     <h3>Informações: </h3>
-                    <p>Esses são os seus dados que guardamos conosco! Anote ou baixe seu token, ele é o substituto da sua senha.
+                    <p>Esses são os seus dados que guardamos conosco! Baixe seu token, ele é o substituto da sua senha.
                         Com ele é possível entrar em sua conta e redefinir seus dados.
                     </p>
                     <?php $usuario = new Usuario;
@@ -47,10 +47,10 @@ gerente();
                 </section>
 
                 <section>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalAlterarSenha"> Alterar Senha </button>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalAlterarEmail"> Alterar Email </button>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalAlterarNome"> Alterar Nome </button>
-                    <form action="" method="POST"><button class="btn btn-primary" name="downloadToken"> Baixar Token </button> <?php config(); ?></form>
+                    <button class="d-inline  m-1 btn verde-escuro" data-toggle="modal" data-target="#modalAlterarSenha"> Alterar Senha </button>
+                    <button class="d-inline  m-1 btn rosa-claro" data-toggle="modal" data-target="#modalAlterarEmail"> Alterar Email </button>
+                    <button class="d-inline  m-1 btn verde-claro" data-toggle="modal" data-target="#modalAlterarNome"> Alterar Nome </button>
+                    <form action="" method="POST" class="d-inline m-1"><button class="btn rosa-escuro" name="downloadToken"> Baixar Token </button> <?php config(); ?></form>
                 </section>
 
                 <section id="modal-hidden">
@@ -58,7 +58,7 @@ gerente();
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Alteração de Senha</h4>                                   
+                                    <h4 class="modal-title">Alteração de Senha</h4>
                                 </div>
                                 <div class="modal-body">
                                     <form action="" method="POST" autocomplete="off">
@@ -140,8 +140,8 @@ gerente();
     $navegacao->footer();
     ?>
 
-    <script src="js/comportamento.js"></script>
     <script src="src/jquery/jquery-3.4.1.min.js"></script>
+    <script src="js/comportamento.js"></script>
     <script src="src/popper/popper.min.js"></script>
     <script src="src/bootstrap/js/bootstrap.min.js"></script>
 </body>

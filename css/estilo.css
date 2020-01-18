@@ -42,6 +42,18 @@ label {
 .padrao {
   background-color: #FFFFFF !important; }
 
+.verde-claro {
+  background-color: #87BF7E !important; }
+
+.verde-escuro {
+  background-color: #358C54 !important; }
+
+.rosa-escuro {
+  background-color: #F26D78 !important; }
+
+.rosa-claro {
+  background-color: #F294C0 !important; }
+
 /*---------------------*/
 /*      CSS Reset      */
 /*---------------------*/
@@ -320,5 +332,8 @@ footer {
   @media screen and (max-width: 500px) {
     .configuracoes {
       width: 80%; } }
+
+#tokenUsuario {
+  display: none; }
 
 /*# sourceMappingURL=estilo.css.map */

@@ -13,14 +13,12 @@ gerente();
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Roger Bernardo de Melo Lima">
-
     <!--FOLHA DE ESTILO-->
     <link rel="stylesheet" href="css/estilo.css" />
-
     <!--Bootstrap 4 -->
     <link rel="stylesheet" href="src/bootstrap/css/bootstrap.min.css" />
-
     <title>Cactus - Seu bloco de notas</title>
+
 </head>
 
 <body>
@@ -28,8 +26,6 @@ gerente();
     $navegacao = new Navegacao();
     $navegacao->navbarNotas($_SESSION['nome']);
     ?>
-
-
     <main class="fundo-padrao">
         <section id="criar-notas">
             <form method="POST" action="" class="form-notas" id="form-notas" autocomplete="off">
@@ -87,10 +83,27 @@ gerente();
     $navegacao->footer();
     ?>
 
-    <script src="js/comportamento.js"></script>
     <script src="src/jquery/jquery-3.4.1.min.js"></script>
+    <script src="js/comportamento.js"></script>
     <script src="src/popper/popper.min.js"></script>
     <script src="src/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("form.anotacoes").click(function() {
+                var idForm = $(this).attr("id");
+                var divControle = "#" + idForm + " div.controles";
+                $(divControle).show(500);
+            });
+
+            $("form.anotacoes").mouseleave(function() {
+                var idForm = $(this).attr("id");
+                var divControle = "#" + idForm + " div.controles";
+                $(divControle).hide(500);
+            });
+
+            $
+        });
+    </script>
 </body>
 
 </html>

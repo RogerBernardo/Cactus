@@ -24,7 +24,6 @@ Futuras funcionalidades do projeto:
 Cacto na página inicial: Photo by Polina Raevskaya on Unsplash
 
 ## To DO
--> Evento Click nas notas não permite a alteração ou exclusão das mesmas.
 -> Design das configurações.
 
 

@@ -109,7 +109,7 @@ class Usuario extends Criptografar
     public function getProperties($email)
     {
         $mysqli = mysqli();
-        $sql = "SELECT nome, email, token from usuario WHERE email = ?";
+        $sql = "SELECT nome, email from usuario WHERE email = ?";
         $stmt = $mysqli->prepare($sql);
         $stmt->bind_param('s', $email);
         $stmt->execute();
@@ -117,16 +117,12 @@ class Usuario extends Criptografar
 
         if ($resultado->num_rows > 0) {
             while ($row = $resultado->fetch_assoc()) {
-                $token = $row['token'];
                 $nome = $row['nome'];
             }
-
             $escapeHTML = <<< HTML
             <p><b>Nome:  </b>$nome </p>
-            <p><b>Email: </b>$email </p>
-            <p><b>Token: </b>$token </p> 
+            <p><b>Email: </b>$email </p>           
             HTML;
-
             echo ($escapeHTML);
         } else {
             echo ("Erro ao buscar informações");
@@ -180,7 +176,7 @@ class Usuario extends Criptografar
         $stmt->execute();
 
         if ($stmt->num_rows >= 0) {
-            $_SESSION['senha'] = $senha;           
+            $_SESSION['senha'] = $senha;
             echo "<meta HTTP-EQUIV='refresh' CONTENT='15;URL=cactus.php'>";
         } else {
             echo "<div class=\"alert alert-danger\" role=\"alert\">Erro ao salvar as alterações</div>";
@@ -221,8 +217,8 @@ class Usuario extends Criptografar
         $stmt->bind_param('ss',  $email1, $email);
         $stmt->execute();
 
-        if ($stmt->num_rows >= 0) {          
-            $_SESSION['email'] = $email1;            
+        if ($stmt->num_rows >= 0) {
+            $_SESSION['email'] = $email1;
             echo "<meta HTTP-EQUIV='refresh' CONTENT='15;URL=cactus.php'>";
         } else {
             echo "<div class=\"alert alert-danger\" role=\"alert\">Erro ao salvar as alterações</div>";
@@ -382,7 +378,7 @@ class Notas
                         break;
                 }
                 $cards = <<<FECHARCARDS
-                <form method="post" action="" autocomplete="off" onClick="formClick($id)">
+                <form method="post" action="" autocomplete="off" id="card$id" class="anotacoes">
                 <div class="card $cor">
                 <div class="card-body">
                 <input type="hidden" value="$id" name="idnotas">

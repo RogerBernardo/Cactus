@@ -23,9 +23,6 @@ Futuras funcionalidades do projeto:
 ## Imagens
 Cacto na página inicial: Photo by Polina Raevskaya on Unsplash
 
-## To DO
--> Design das configurações.
-
 
 ## Links utilizados
 - https://websitebeaver.com/prepared-statements-in-php-mysqli-to-prevent-sql-injection

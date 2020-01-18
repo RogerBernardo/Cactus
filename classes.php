@@ -231,10 +231,11 @@ class Usuario extends Criptografar
     public function downloadToken($email)
     {
         /* 
-        arquivo = Objeto para manipular o arquivo
-        arquivoLocal = Caminho absoluto do arquivo
-        nome_arquivo = Nome do arquivo.txt
+        Arquivo = Objeto para manipular o arquivo
+        ArquivoLocal = Caminho absoluto do arquivo
+        ArquivoNome = Nome do arquivo.txt
         */
+
         $mysqli = mysqli();
         $sql = "SELECT token from usuario WHERE email = ?";
         $stmt = $mysqli->prepare($sql);
@@ -243,39 +244,48 @@ class Usuario extends Criptografar
         $resultado = $stmt->get_result();
 
         if ($resultado->num_rows > 0) {
-            while ($row = $resultado->fetch_assoc())
+            while ($row = $resultado->fetch_assoc()) {
                 $token = $row['token'];
-
-            $nome_arquivo = $email . "-Token.txt";
-            $arquivo = fopen($nome_arquivo, 'w');
-            if ($arquivo == false) die("<div class=\"alert alert-warning\" role=\"alert\">Não foi possível criar o arquivo!</div>");
+            }
+            $ArquivoNome = $email . "(Token).txt";
+            $Arquivo = fopen($ArquivoNome, 'w');
+            if ($Arquivo == false) die("<div class=\"alert alert-warning\" role=\"alert\">Não foi possível criar o arquivo!</div>");
 
             //Escrevendo no arquivo
-            fwrite($arquivo, $token);
-            //Fechando o arquivo
-            fclose($arquivo);
+            fwrite($Arquivo, $token);
 
             set_time_limit(0);
-            $arquivoLocal = "C:/xampp/htdocs/Cactus/" . $nome_arquivo;
-            echo ($arquivoLocal);
+            $ArquivoLocal = "C:/xampp/htdocs/Cactus/" . $ArquivoNome;
+            echo ($ArquivoLocal);
             // Verifica se o arquivo não existe
-            if (!file_exists($arquivoLocal)) die("<div class=\"alert alert-warning\" role=\"alert\">Não foi possível localizar o arquivo!</div>");
+            if (!file_exists($ArquivoLocal)) die("<div class=\"alert alert-warning\" role=\"alert\">Não foi possível localizar o arquivo!</div>");
 
             // Configuramos os headers que serão enviados para o browser
             header('Content-Description: File Transfer');
-            header('Content-Disposition: attachment; filename="' . $nome_arquivo . '"');
+            header('Content-Disposition: attachment; filename="' . $ArquivoNome . '"');
             header('Content-Type: application/octet-stream');
             header('Content-Transfer-Encoding: binary');
-            header('Content-Length: ' . filesize($nome_arquivo));
+            header('Content-Length: ' . filesize($ArquivoNome));
             header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
             header('Pragma: public');
             header('Expires: 0');
+
+
+            //Limpando o Buffer
+            ob_end_clean();
+           
+
             // Envia o arquivo para o cliente
-            readfile($nome_arquivo);
+            readfile($ArquivoNome);
+
             //Apagando arquivo do servidor
-            unlink($arquivoLocal);
+            unlink($ArquivoNome);
+            ftruncate($Arquivo, 0);
+            flush();
         } else {
             echo "<div class=\"alert alert-warning\" role=\"alert\">Não foi possível realizar o download!</div>";
+            //Apagando arquivo do servidor
+            unlink($ArquivoNome);
         }
 
         $mysqli->close();

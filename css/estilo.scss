@@ -1,145 +1,162 @@
 /*---------------------*/
 /*        Fontes       */
 /*---------------------*/
-@font-face{
-    font-family: 'Roboto';
+@font-face {
+    font-family: "Roboto";
     src: ("src/fonts/Roboto/Roboto-Regular.ttf");
 }
 
-@font-face{
-    font-family: 'Roboto';
+@font-face {
+    font-family: "Roboto";
     src: ("src/fonts/Roboto/Roboto-Bold.ttf");
     font-weight: 600;
 }
 
-@font-face{
-    font-family: 'Opens Sans';
+@font-face {
+    font-family: "Opens Sans";
     src: ("src/fonts/Open_Sans/OpenSans-Regular.ttf");
 }
 
-@font-face{
-    font-family: 'Opens Sans';
+@font-face {
+    font-family: "Opens Sans";
     src: ("src/fonts/Open_Sans/OpenSans-Bold.ttf");
     font-weight: 600;
 }
 
-h1, h2, h3, h4, h5, h6, button{    
-    font-family: 'Roboto', sans-serif !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+    font-family: "Roboto", sans-serif !important;
 }
 
-p, a, input, label, select, textarea, form, option{
-    font-family: 'Open Sans', sans-serif !important;
+p,
+a,
+input,
+label,
+select,
+textarea,
+form,
+option {
+    font-family: "Open Sans", sans-serif !important;
 }
 
-label{
+label {
     font-weight: bold;
+}
+
+
+a {
+    text-decoration: none;
 }
 
 /*---------------------*/
 /*   Cores do sistema  */
 /*---------------------*/
-$verde-escuro: #358C54;
-$verde-claro: #87BF7E;
-$verde: #52D981;
-$rosa-escuro: #F26D78;
-$rosa-claro: #F294C0;
-$rosa: #F294C0;
-$amarelo: #FFE52E;
-$azul: #6BDBFF;
-$preto: #0D0D0D;
-$padrao: #FFFFFF;
+$verde-escuro: #358c54;
+$verde-claro: #87bf7e;
+$verde: #52d981;
+$rosa-escuro: #f26d78;
+$rosa-claro: #f294c0;
+$rosa: #f294c0;
+$amarelo: #ffe52e;
+$azul: #6bdbff;
+$preto: #0d0d0d;
+$padrao: #ffffff;
 $cinza: #808080;
 $cinza-escuro: #353839;
 
-.amarelo{
+.amarelo {
     background-color: $amarelo !important;
 }
-.verde{
+.verde {
     background-color: $verde !important;
 }
-.rosa{
+.rosa {
     background-color: $rosa !important;
 }
-.azul{
+.azul {
     background-color: $azul !important;
 }
-.padrao{
+.padrao {
     background-color: $padrao !important;
 }
 
-.verde-claro{
+.verde-claro {
     background-color: $verde-claro !important;
 }
 
-.verde-escuro{
+.verde-escuro {
     background-color: $verde-escuro !important;
 }
 
-.rosa-escuro{
+.rosa-escuro {
     background-color: $rosa-escuro !important;
 }
 
-.rosa-claro{
+.rosa-claro {
     background-color: $rosa-claro !important;
 }
 
-
-@mixin sombra-inferior{
+@mixin sombra-inferior {
     -webkit-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    0px 10px 15px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         0px 10px 15px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.75);
 }
 
 /*---------------------*/
 /*      CSS Reset      */
 /*---------------------*/
 * {
-    padding:0;
-    margin:0;
-    vertical-align:baseline;
-    list-style:none;
-    border:0;
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+    border: 0;
 }
 
 /*Main*/
-main{    
+main {
     width: 100%;
 
-    section{
-        padding: 3%;     
-        
-        .title{
+    section {
+        padding: 3%;
+
+        .title {
             display: block;
-            margin-bottom: 15px;            
+            margin-bottom: 15px;
             color: $cinza-escuro;
             text-transform: uppercase;
         }
     }
 }
 
-.fundo-padrao{
+.fundo-padrao {
     background-color: $verde-claro !important;
 }
 
 /*---------------------*/
 /*       Navbar        */
 /*---------------------*/
-.bg-navbar{
+.bg-navbar {
     background-color: $verde-escuro !important;
 }
 
-.nav-item .nav-link{
+.nav-item .nav-link {
     color: white !important;
     margin-right: 20px;
 }
 
-header{
-    button{
+header {
+    button {
         background-color: transparent;
         outline: none;
     }
-    
-    button:focus{
+
+    button:focus {
         outline: 0;
     }
 }
@@ -147,112 +164,114 @@ header{
 /*---------------------*/
 /*  Login e Cadastro   */
 /*---------------------*/
-.store{
+.store {
     width: 100%;
     min-height: 115vh;
-    background: $verde-escuro;   
+    background: $verde-escuro;
 }
 
-.box{
+.box {
     background: whitesmoke;
-    height: auto;    
+    height: auto;
     margin-left: auto;
-    margin-right: auto;    
+    margin-right: auto;
     padding: 50px;
-    width: 30%;
-    @include sombra-inferior();   
+    width: 40%;
+    @include sombra-inferior();
 
-    h1{
+    h1 {
         text-align: center;
         margin-bottom: 25px;
         font-size: 2em;
     }
 
-    .btn{
+    .btn {
         width: 100%;
         background: $rosa-claro;
         color: $preto;
         margin-bottom: 15px;
+        transition: all 1s ease-in-out;
     }
-    
-    p{
-        text-align: center;
-    }       
 
-    @media screen and (max-width: 1000px){
+    p {
+        text-align: center;
+    }
+
+    @media screen and (max-width: 1000px) {
         width: 55%;
     }
 
-    @media screen and (max-width: 800px){
+    @media screen and (max-width: 800px) {
         width: 60%;
     }
 
-    @media screen and (max-width: 700px){
+    @media screen and (max-width: 700px) {
         width: 65%;
         padding: 50px;
     }
 
-    @media screen and (max-width: 500px){
+    @media screen and (max-width: 500px) {
         width: 70%;
-        padding: 20px;       
-    }  
+        padding: 20px;
+    }
 }
 
-.form-input{
+.form-input {
     display: block;
     width: 100%;
     padding: 5px;
     margin-bottom: 30px;
     border: 0;
     border-bottom: 1px solid #c1c1c1;
-    background-color: whitesmoke;     
-    line-height: 1.6em;   
+    background-color: whitesmoke;
+    line-height: 1.6em;
 }
 
-.form-input:hover, .form-input:focus{
+.form-input:hover,
+.form-input:focus {
     outline: 0;
     border-bottom: 1px solid $rosa-claro;
 }
 
-.form-input::before{
-    background-color: whitesmoke;     
+.form-input::before {
+    background-color: whitesmoke;
 }
 
-.logo{
+.logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    text-align: center; 
+    text-align: center;
 }
 
-@mixin design_controls{
-    input[type="text"]{
+@mixin design_controls {
+    input[type="text"] {
         outline: none;
         border-bottom: 1px solid $cinza;
         width: 100%;
         margin-bottom: 0.5em;
         padding-bottom: 5px;
-        font-weight: 800;     
-        background-color: transparent;   
-    }  
+        font-weight: 800;
+        background-color: transparent;
+    }
 
-    textarea{
+    textarea {
         resize: vertical;
         padding: 5px;
-        outline: none; 
+        outline: none;
         width: 100%;
         font-weight: 300;
-        color: black; 
-        background-color: transparent;       
-    }      
+        color: black;
+        background-color: transparent;
+    }
 
-    button{
+    button {
         display: block;
         width: 100%;
         margin-top: 10px;
     }
 
-    select{
+    select {
         margin-left: 3%;
         width: 87% !important;
     }
@@ -261,17 +280,17 @@ header{
 /*---------------------*/
 /*   Design das notas  */
 /*---------------------*/
-.form-notas{
+.form-notas {
     background-color: white;
     width: 25em;
     margin: 0 auto;
     padding: 2em;
     border-radius: 0.8em;
     @include sombra-inferior();
-    @include design_controls();    
+    @include design_controls();
 }
 
-.card{
+.card {
     padding: 1em;
     border-radius: 1em !important;
     width: 25em;
@@ -280,67 +299,80 @@ header{
     @include design_controls();
 }
 
-.card-body{
+.card-body {
     padding: 0;
 }
 
-#notas-importantes, #notas-restantes{
-    @media screen and (max-width: 600px){
-       .card-group{
-           margin: 0 auto;      
-       }       
-    }  
+#notas-importantes,
+#notas-restantes {
+    @media screen and (max-width: 600px) {
+        .card-group {
+            margin: 0 auto;
+        }
+    }
 }
 
-.controles{
+.controles {
     display: none;
 }
 
 /*---------------------*/
 /*       INDEX         */
 /*---------------------*/
-.calltoaction{
+.calltoaction {
     background: white;
     color: $verde-escuro;
     font-weight: bold !important;
-    width: 300px;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
+    max-width: 300px;
+    width: 100%;
+    text-decoration: none;   
+    transition: all 1s ease-in-out;
 }
 
-.caixa{    
+
+
+.calltoaction:hover {
+    color: $verde-escuro;
+    filter: brightness(95%);
+}
+
+.caixa {
     padding: 5%;
 
-    img{
+    img {
         margin-bottom: 15px;
     }
 }
 
-#bloco-banner{
+#bloco-banner {
     padding-top: 10%;
-    padding-bottom: 10%;   
+    padding-bottom: 10%;
 }
 
-#section-1{
+#section-1 {
     background-color: $verde-escuro;
     color: $padrao;
 
-    img{
-        margin: 0 auto;;
+    img {
+        margin: 0 auto;
+        width: auto;
+        height: auto;
     }
 
-    h1{
+    h1 {
         font-size: 4em;
     }
 }
 
-#section-2{
+#section-2 {
     padding-top: 5%;
     padding-bottom: 10%;
     background-color: white;
 }
 
-#section-3{
+#section-3 {
     background-image: url(../src/img/cactus-img.jpeg);
     background-size: cover;
     padding-top: 10%;
@@ -348,26 +380,24 @@ header{
     text-align: center;
     color: whitesmoke;
 
-    h2{
+    h2 {
         letter-spacing: 2px;
-        text-transform: uppercase;
         margin-bottom: 30px;
         text-shadow: 0px 0px 20px #000000;
     }
 
-    @media screen and (max-width: 600px){
-        h2{
-            letter-spacing: 1px;   
-            font-size: 1.6em;        
-        }      
-     }  
+    @media screen and (max-width: 600px) {
+        h2 {
+            letter-spacing: 1px;
+            font-size: 1.6em;
+        }
+    }
 }
-
 
 /*---------------------*/
 /*       FOOTER        */
 /*---------------------*/
-footer{
+footer {
     padding-top: 4em;
     padding-bottom: 4em;
     background-color: whitesmoke;
@@ -377,17 +407,17 @@ footer{
     align-items: center;
     text-align: center;
 
-    a{
+    a {
         margin-left: 1em;
         margin-right: 1em;
     }
 
-    img{
+    img {
         width: 25px;
         height: auto;
     }
 
-    p{
+    p {
         font-style: italic;
         margin-top: 2em;
     }
@@ -396,30 +426,30 @@ footer{
 /*---------------------*/
 /*       Config        */
 /*---------------------*/
-.configuracoes{
+.configuracoes {
     width: 45%;
     margin: 0 auto;
     margin-top: 5%;
-    margin-bottom: 5%;    
+    margin-bottom: 5%;
     background-color: white !important;
 
-    @media screen and (max-width: 1000px){
+    @media screen and (max-width: 1000px) {
         width: 50%;
     }
 
-    @media screen and (max-width: 800px){
+    @media screen and (max-width: 800px) {
         width: 60%;
     }
 
-    @media screen and (max-width: 700px){
-        width:70%;       
+    @media screen and (max-width: 700px) {
+        width: 70%;
     }
 
-    @media screen and (max-width: 500px){
+    @media screen and (max-width: 500px) {
         width: 80%;
-    }  
+    }
 }
 
-#tokenUsuario{
+#tokenUsuario {
     display: none;
 }

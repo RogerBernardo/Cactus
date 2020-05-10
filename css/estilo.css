@@ -2,57 +2,73 @@
 /*        Fontes       */
 /*---------------------*/
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   src: "src/fonts/Roboto/Roboto-Regular.ttf"; }
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   src: "src/fonts/Roboto/Roboto-Bold.ttf";
   font-weight: 600; }
 @font-face {
-  font-family: 'Opens Sans';
+  font-family: "Opens Sans";
   src: "src/fonts/Open_Sans/OpenSans-Regular.ttf"; }
 @font-face {
-  font-family: 'Opens Sans';
+  font-family: "Opens Sans";
   src: "src/fonts/Open_Sans/OpenSans-Bold.ttf";
   font-weight: 600; }
-h1, h2, h3, h4, h5, h6, button {
-  font-family: 'Roboto', sans-serif !important; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: "Roboto", sans-serif !important; }
 
-p, a, input, label, select, textarea, form, option {
-  font-family: 'Open Sans', sans-serif !important; }
+p,
+a,
+input,
+label,
+select,
+textarea,
+form,
+option {
+  font-family: "Open Sans", sans-serif !important; }
 
 label {
   font-weight: bold; }
+
+a {
+  text-decoration: none; }
 
 /*---------------------*/
 /*   Cores do sistema  */
 /*---------------------*/
 .amarelo {
-  background-color: #FFE52E !important; }
+  background-color: #ffe52e !important; }
 
 .verde {
-  background-color: #52D981 !important; }
+  background-color: #52d981 !important; }
 
 .rosa {
-  background-color: #F294C0 !important; }
+  background-color: #f294c0 !important; }
 
 .azul {
-  background-color: #6BDBFF !important; }
+  background-color: #6bdbff !important; }
 
 .padrao {
-  background-color: #FFFFFF !important; }
+  background-color: #ffffff !important; }
 
 .verde-claro {
-  background-color: #87BF7E !important; }
+  background-color: #87bf7e !important; }
 
 .verde-escuro {
-  background-color: #358C54 !important; }
+  background-color: #358c54 !important; }
 
 .rosa-escuro {
-  background-color: #F26D78 !important; }
+  background-color: #f26d78 !important; }
 
 .rosa-claro {
-  background-color: #F294C0 !important; }
+  background-color: #f294c0 !important; }
 
 /*---------------------*/
 /*      CSS Reset      */
@@ -76,13 +92,13 @@ main {
       text-transform: uppercase; }
 
 .fundo-padrao {
-  background-color: #87BF7E !important; }
+  background-color: #87bf7e !important; }
 
 /*---------------------*/
 /*       Navbar        */
 /*---------------------*/
 .bg-navbar {
-  background-color: #358C54 !important; }
+  background-color: #358c54 !important; }
 
 .nav-item .nav-link {
   color: white !important;
@@ -100,7 +116,7 @@ header button:focus {
 .store {
   width: 100%;
   min-height: 115vh;
-  background: #358C54; }
+  background: #358c54; }
 
 .box {
   background: whitesmoke;
@@ -108,7 +124,7 @@ header button:focus {
   margin-left: auto;
   margin-right: auto;
   padding: 50px;
-  width: 30%;
+  width: 40%;
   -webkit-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.75);
   box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.75); }
@@ -118,9 +134,10 @@ header button:focus {
     font-size: 2em; }
   .box .btn {
     width: 100%;
-    background: #F294C0;
-    color: #0D0D0D;
-    margin-bottom: 15px; }
+    background: #f294c0;
+    color: #0d0d0d;
+    margin-bottom: 15px;
+    transition: all 1s ease-in-out; }
   .box p {
     text-align: center; }
   @media screen and (max-width: 1000px) {
@@ -148,9 +165,10 @@ header button:focus {
   background-color: whitesmoke;
   line-height: 1.6em; }
 
-.form-input:hover, .form-input:focus {
+.form-input:hover,
+.form-input:focus {
   outline: 0;
-  border-bottom: 1px solid #F294C0; }
+  border-bottom: 1px solid #f294c0; }
 
 .form-input::before {
   background-color: whitesmoke; }
@@ -233,7 +251,8 @@ header button:focus {
   padding: 0; }
 
 @media screen and (max-width: 600px) {
-  #notas-importantes .card-group, #notas-restantes .card-group {
+  #notas-importantes .card-group,
+  #notas-restantes .card-group {
     margin: 0 auto; } }
 
 .controles {
@@ -244,11 +263,18 @@ header button:focus {
 /*---------------------*/
 .calltoaction {
   background: white;
-  color: #358C54;
+  color: #358c54;
   font-weight: bold !important;
-  width: 300px;
   padding-top: 10px !important;
-  padding-bottom: 10px !important; }
+  padding-bottom: 10px !important;
+  max-width: 300px;
+  width: 100%;
+  text-decoration: none;
+  transition: all 1s ease-in-out; }
+
+.calltoaction:hover {
+  color: #358c54;
+  filter: brightness(95%); }
 
 .caixa {
   padding: 5%; }
@@ -260,10 +286,12 @@ header button:focus {
   padding-bottom: 10%; }
 
 #section-1 {
-  background-color: #358C54;
-  color: #FFFFFF; }
+  background-color: #358c54;
+  color: #ffffff; }
   #section-1 img {
-    margin: 0 auto; }
+    margin: 0 auto;
+    width: auto;
+    height: auto; }
   #section-1 h1 {
     font-size: 4em; }
 
@@ -281,7 +309,6 @@ header button:focus {
   color: whitesmoke; }
   #section-3 h2 {
     letter-spacing: 2px;
-    text-transform: uppercase;
     margin-bottom: 30px;
     text-shadow: 0px 0px 20px #000000; }
   @media screen and (max-width: 600px) {

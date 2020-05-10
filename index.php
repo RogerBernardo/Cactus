@@ -28,13 +28,13 @@
     <main>
         <section id="section-1">
             <div class="row">
-                <div class="col-md-6" id="bloco-banner">
+                <div class="col-md-12 col-lg-6" id="bloco-banner">
                     <h1>Cactus - Seu bloco de notas</h1>
                     <p>Registre suas ideias onde quer que esteja, afinal, elas sempre estarão guardadas conosco!</p>
 
                     <a href="cadastro.php" class="btn calltoaction">Cadastre-se</a>
                 </div>
-                <div class="col-md-6 d-flex justify-content-center">
+                <div class="col-md-12 col-lg-6 d-flex justify-content-center">
                     <img src="src/img/logo/cactus-512.png" class="img-fluid" alt="Imagem de um cacto">
                 </div>
             </div>
